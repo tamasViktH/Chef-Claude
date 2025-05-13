@@ -31,11 +31,17 @@ export default function Main() {
         )
     }
 
+    function handleAddIngredient(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        addIngredient(formData);
+    }
+
     return (
         <main>
             <div className="app-content">
                 <form
-                    action={addIngredient}
+                    onSubmit={handleAddIngredient}
                     className="add-ingredient-form"
                     style={{ display: "flex", gap: "0.5em", alignItems: "center" }}
                 >
